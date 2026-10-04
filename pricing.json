@@ -1,0 +1,1 @@
+{"overage":null,"plans":[{"name":"Free","overage":null,"price_monthly_usd":0,"quota":"50 checks/day"},{"name":"Pro","overage":null,"price_monthly_usd":9,"quota":"unlimited"}],"x402":{"applies_to":["check_spf","check_dmarc","check_mx","domain_health"],"enabled":true,"price_usdc_per_call":0.02}}

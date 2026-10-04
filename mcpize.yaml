@@ -1,0 +1,34 @@
+version: 1
+runtime: typescript
+entry: src/index.ts
+description: Live DNS email-authentication diagnostics — SPF (10-lookup chain counting), DMARC, MX/null-MX, RDAP expiry, DNSSEC DS presence, nameserver health. Keyless.
+
+build:
+  install: npm ci
+  command: npm run build
+
+startCommand:
+  type: http
+  command: node dist/index.js
+
+configSchema:
+  source: code
+
+pricing:
+  protocol: x402
+  network: base-sepolia  # test first, flip to 'base' for production
+  recipient: "0x62c6da49028953919a4bd35d3092ac9277DA0a7D"
+  asset: usdc
+  tools:
+    - name: check_spf
+      price: "0.02"
+      description: "Fetch and diagnose a domain's SPF record via live DNS. Follows include:/redirect= chains (capped at depth 12) and counts DNS-querying mechan…"
+    - name: check_dmarc
+      price: "0.02"
+      description: "Fetch and diagnose a domain's DMARC record from _dmarc.<domain> via live DNS. Reports the raw record, enforcement policy (p=), subdomain pol…"
+    - name: check_mx
+      price: "0.02"
+      description: "Fetch a domain's MX records via live DNS, sorted by priority. Detects null MX ('0 .', RFC 7505 — domain accepts no mail), single-MX setups w…"
+    - name: domain_health
+      price: "0.02"
+      description: "Domain health overview: RDAP registration expiry (with days remaining), DNSSEC DS-record presence at the parent, and the authoritative names…"

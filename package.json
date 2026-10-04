@@ -1,0 +1,30 @@
+{
+  "name": "dns-email-auth",
+  "version": "1.0.0",
+  "description": "Live DNS email-authentication diagnostics MCP server: SPF (include-chain 10-lookup counting), DMARC, MX/null-MX, RDAP expiry, DNSSEC DS presence, nameserver health. Keyless.",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsx watch src/index.ts",
+    "test": "vitest run",
+    "test:smoke": "node scripts/smoke-test.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.23.0",
+    "chalk": "^5.4.1",
+    "express": "^5.1.0",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.15.21",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3",
+    "vitest": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
