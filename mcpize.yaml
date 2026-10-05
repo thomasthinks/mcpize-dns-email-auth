@@ -16,7 +16,7 @@ configSchema:
 
 pricing:
   protocol: x402
-  network: base-sepolia  # test first, flip to 'base' for production
+  network: base  # production: real USDC on Base mainnet (flipped 2026-10-05)
   recipient: "0x62c6da49028953919a4bd35d3092ac9277DA0a7D"
   asset: usdc
   tools:
