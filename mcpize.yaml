@@ -22,13 +22,9 @@ pricing:
   tools:
     - name: check_spf
       price: "0.02"
-      description: "Fetch and diagnose a domain's SPF record via live DNS. Follows include:/redirect= chains (capped at depth 12) and counts DNS-querying mechan…"
     - name: check_dmarc
       price: "0.02"
-      description: "Fetch and diagnose a domain's DMARC record from _dmarc.<domain> via live DNS. Reports the raw record, enforcement policy (p=), subdomain pol…"
     - name: check_mx
       price: "0.02"
-      description: "Fetch a domain's MX records via live DNS, sorted by priority. Detects null MX ('0 .', RFC 7505 — domain accepts no mail), single-MX setups w…"
     - name: domain_health
       price: "0.02"
-      description: "Domain health overview: RDAP registration expiry (with days remaining), DNSSEC DS-record presence at the parent, and the authoritative names…"
